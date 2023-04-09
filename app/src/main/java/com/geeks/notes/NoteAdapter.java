@@ -73,9 +73,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         private TextView desc;
         private ImageView delete;
         private ImageView editNote;
-
-
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.item_image);
@@ -102,7 +99,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             });
         }
     }
-
     interface  IOnItem{
         void delete(int pos );
         void edit (int pos,Note note);
