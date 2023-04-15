@@ -32,7 +32,9 @@
     </androidx.cardview.widget.CardView>
 
     <EditText
-        android:id="@+id/editTitle"
+        android:textColor="@color/black"
+        android:id="@+id/edit_title"
+        android:textColorHint="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_edit_text"
@@ -42,6 +44,9 @@
         />
 
     <EditText
+        android:id="@+id/edit_desc"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_edit_text"
@@ -52,10 +57,13 @@
         />
 
     <EditText
+        android:id="@+id/edit_date"
+        android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_edit_text"
         android:hint="@string/date"
+        android:textColorHint="@color/black"
         android:padding="12dp"
         android:layout_marginHorizontal="40dp"
         />

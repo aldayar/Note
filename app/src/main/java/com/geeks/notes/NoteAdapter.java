@@ -1,14 +1,10 @@
 package com.geeks.notes;
-
-import android.app.AlertDialog;
-import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
     private List<Note> list = new ArrayList<>();
@@ -28,6 +25,10 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
     public NoteAdapter(IOnItem listener) {
         this.listener = listener;
+    }
+    public void changeModel(int position, Note note) {
+        list.set(position, note);
+        notifyItemChanged(position);
     }
 
     public void setList(List<Note> list){
@@ -41,7 +42,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
     public void delete(int pos){
-        list.remove(pos);
+        this.list.remove(pos);
         notifyItemRemoved(pos);
     }
 
@@ -102,4 +103,3 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         void edit (int pos,Note note);
     }
 }
-

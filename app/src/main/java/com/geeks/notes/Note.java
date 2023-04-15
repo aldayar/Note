@@ -1,5 +1,7 @@
 package com.geeks.notes;
 
+import android.widget.EditText;
+
 import java.io.Serializable;
 
 public class Note implements Serializable {
@@ -16,21 +18,8 @@ public class Note implements Serializable {
         this.date = date;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
 
     public String getImage() {
         return image;
