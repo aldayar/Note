@@ -64,6 +64,7 @@ public class AddFragment extends Fragment {
                 bundle.putSerializable("newModel", editedModel);
                 int posModel = getArguments().getInt("position");
                 bundle.putInt("posModel", posModel);
+                Toast.makeText(getContext().getApplicationContext(),"The note successfully edited",Toast.LENGTH_SHORT);
                 requireActivity().getSupportFragmentManager().setFragmentResult("editNote", bundle);
             });
         } else {
@@ -74,6 +75,7 @@ public class AddFragment extends Fragment {
 
                 Note addModel= new Note(image,inputtedTitle,inputtedDesc,inputtedDate);
                 bundle.putSerializable("addModel",addModel);
+                Toast.makeText(getContext().getApplicationContext(),"The note successfully added", Toast.LENGTH_SHORT);
                 requireActivity().getSupportFragmentManager().setFragmentResult("addNote",bundle);
 
             });

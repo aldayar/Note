@@ -43,13 +43,7 @@ public class MainFragment extends Fragment implements NoteAdapter.IOnItem {
         adapter = new NoteAdapter(this);
         recyclerView.setAdapter(adapter);
 
-        requireActivity().getSupportFragmentManager().setFragmentResultListener("addNote",this,new FragmentResultListener(){
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                Note note = (Note) result.getSerializable("addModel");
-                adapter.addNote(note);
-            }
-        });
+
         requireActivity().getSupportFragmentManager().setFragmentResultListener("editNote", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
@@ -63,6 +57,7 @@ public class MainFragment extends Fragment implements NoteAdapter.IOnItem {
                     .replace(R.id.main_container, new AddFragment())
                     .commit();
         });
+
 
     }
 
